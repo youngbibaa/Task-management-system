@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ project.project_name }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ project.project_name }}</h1>
+        <p>{{ project.description }}</p>
+        <p>Владелец: {{ project.project_owner }}</p>
+        <p>Дата создания: {{ project.creation_date }}</p>
+        <p>Последнее обновлоение: {{ project.update_date }}</p><br>
+        <a href="{% url 'change_project' project.pk %}">Изменить проект</a><br><br>
+        <a href="{% url 'project_delete' project.pk %}">Удалить проект</a><br><br>
+        <a href="{% url 'project_list' %}">Вернуться к списку проектов</a><br><br>
+
+    </div>
+</body>
+</html>

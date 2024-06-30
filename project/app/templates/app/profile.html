@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Профиль</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/styles.css' %}">
+</head>
+<body>
+   <div class="container">
+        <h1>{{user.username}}</h1>
+        <h2>{{user.first_name}} {{user.last_name}}</h2>
+        <p><a href="{% url 'project_list' %}">Список проектов</a></p>
+        <p><a href="{% url 'create_project' %}">Создание проектов</a></p>
+        <p>Контакты:</p>
+        <p>Почта: {{user.email}}</p>
+        <p><a href="{% url 'index' %}">Вернуться назад
+        </a></p>
+   </div>
+</body>
+</html>

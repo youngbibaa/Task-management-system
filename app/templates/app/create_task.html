@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание задачи</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'app/css/forms.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h2>Создание задачи для проекта</h2>
+    
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            
+            <button type="submit">Создать</button>
+        </form>
+    </div>
+    
+</body>
+</html>

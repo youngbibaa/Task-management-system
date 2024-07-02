@@ -1,0 +1,47 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    align-items: center; /* Центрирование по вертикали */
+    height: 100vh; /* Для занимаемой всего экрана высоты */
+}
+
+.container {
+    width: 80%; /* Ширина контейнера */
+    max-width: 800px;
+    padding: 20px;
+    background-color: #ffffff; /* Более яркий цвет фона */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333; /* Цвет текста */
+}
+
+h1 {
+    color: #007bff; /* Яркий синий цвет для заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+h2 {
+    color: #000000; /* Темно-серый цвет для второстепенных заголовков */
+}
+
+p {
+    color: #080000; /* Серый цвет для обычного текста */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold; /* Жирный шрифт для ссылок */
+}
+
+a:hover {
+    text-decoration: underline;
+}

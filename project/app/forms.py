@@ -49,6 +49,9 @@ class TaskCreationForm(forms.ModelForm):
             "deadline",
             "status",
         )
+        widgets = {
+            'deadline': forms.DateTimeInput(attrs={'class': 'datetime-input'}),
+        }
 
 
 class TaskChangeForm(forms.ModelForm):
@@ -62,3 +65,6 @@ class TaskChangeForm(forms.ModelForm):
             "deadline",
             "status",
         )
+        widgets = {
+            'deadline': forms.DateTimeInput(attrs={'class': 'datetime-input'}),
+        }

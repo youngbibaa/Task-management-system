@@ -12,7 +12,8 @@
         <p>{{ project.description }}</p>
         <p>Владелец: {{ project.project_owner }}</p>
         <p>Дата создания: {{ project.creation_date }}</p>
-        <p>Последнее обновлоение: {{ project.update_date }}</p><br>
+        <p>Последнее обновление: {{ project.update_date }}</p><br>
+        <a href="{% url 'project_tasks' project.pk %}">Задачи проекта</a><br><br>
         <a href="{% url 'change_project' project.pk %}">Изменить проект</a><br><br>
         <a href="{% url 'project_delete' project.pk %}">Удалить проект</a><br><br>
         <a href="{% url 'project_list' %}">Вернуться к списку проектов</a><br><br>

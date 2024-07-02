@@ -3,18 +3,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Изменение проекта</title>
+    <title>Создание задачи</title>
     <link rel="stylesheet" type="text/css" href="{% static 'app/css/forms.css' %}">
 </head>
 <body>
     <div class="container">
-        <h2>Изменение существующего проекта</h2>
+        <h2>Создание задачи для проекта</h2>
     
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             
-            <button type="submit">Изменить</button>
+            <button type="submit">Создать</button>
         </form>
     </div>
     

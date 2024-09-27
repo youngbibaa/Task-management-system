@@ -117,3 +117,36 @@ def create_task(request, pk):
         form = TaskCreationForm()
 
     return render(request, "app/create_task.html", {"form": form})
+
+from django.http import JsonResponse
+from django.views.decorators.cache import cache_page
+from django.core.cache import cache
+
+# Используем cache_page
+@cache_page(60 * 15)  # кэшируем на 15 минут
+def fibonacci_view(request, n):
+    def fibonacci(n):
+        if n <= 1:
+            return n
+        else:
+            return fibonacci(n-1) + fibonacci(n-2)
+
+    result = fibonacci(n)
+    return JsonResponse({'number': n, 'fibonacci': result})
+
+# Используем cache напрямую
+def fibonacci_view_cache(request, n):
+    cache_key = f'fibonacci_{n}'
+    result = cache.get(cache_key)
+
+    if result is None:
+        def fibonacci(n):
+            if n <= 1:
+                return n
+            else:
+                return fibonacci(n-1) + fibonacci(n-2)
+
+        result = fibonacci(n)
+        cache.set(cache_key, result, timeout=60*15)
+
+    return JsonResponse({'number': n, 'fibonacci': result})
